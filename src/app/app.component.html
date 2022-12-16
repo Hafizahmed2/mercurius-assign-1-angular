@@ -1,0 +1,27 @@
+<div class="header">
+  <img src="assets/images/Mercurius_Inc_Logo.png" width="35px" alt="Mercurius Inc. Logo">
+  Mercurius Inc.
+</div>
+<div class="post-header">
+  StraightLines
+</div>
+
+<div class="schedule-types-navbar">
+  <ul class="nav-items"> 
+    <li (click)="onChangeTab('basic-watch-schedule')">
+      <a href="javascript:void(0)" [ngClass]="{'active': isActive('basic-watch-schedule')}">Basic Watch Schedule</a>
+    </li>
+    <li (click)="onChangeTab('optimized-schedule')">
+      <a href="javascript:void(0)" [ngClass]="{'active': isActive('optimized-schedule')}">Optimized Schedule</a>
+    </li>
+  </ul>
+</div>
+
+<div  class="schedule-type-content">
+  <div class="active" id="" *ngIf="isActive('basic-watch-schedule')">
+    <app-basic-watch-schedule></app-basic-watch-schedule>
+  </div>
+  <div class="active" id="" *ngIf="isActive('optimized-schedule')">
+    <app-optimized-schedule></app-optimized-schedule>
+  </div>
+</div>

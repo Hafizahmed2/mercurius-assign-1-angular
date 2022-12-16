@@ -1,0 +1,12 @@
+.header {
+    background-color: antiquewhite;
+    height: 50px;
+}
+
+.post-header {
+    background-color: #df9f00;
+    height: 40px;
+    line-height: 2;
+    font-size: 22px;
+    padding-left: 10px;
+}
