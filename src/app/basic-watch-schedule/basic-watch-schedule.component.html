@@ -1,25 +1,97 @@
-<div cdkDropListGroup>
-  <div class="example-container">
-    <h2>To do</h2>
-
-    <div
-      cdkDropList
-      [cdkDropListData]="todo"
-      class="example-list"
-      (cdkDropListDropped)="drop($event)">
-      <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+<div class="container-fluid bid-schedule">
+  <div class="ms-3 input-row">
+    <div class="select-area" ng-controller="SectionController">
+      <span style="font-size: 12px; font-weight: 500;">Bid Schedule</span>
+      <select name="singleSelect" ng-model="data.singleSelect">
+        <option value="option-1">zob_area6_bidschedule_2023 - (6 bid Rounds)</option>
+        <option value="option-2">zob_area6_bidschedule_2023 - (6 bid Rounds)</option>
+        <option value="option-3">zob_area6_bidschedule_2023 - (6 bid Rounds)</option>
+        <option value="option-4">zob_area6_bidschedule_2023 - (6 bid Rounds)</option>
+        <option value="option-5">zob_area6_bidschedule_2023 - (6 bid Rounds)</option>
+        <option value="option-6">zob_area6_bidschedule_2023 - (6 bid Rounds)</option>
+      </select>
+    </div>
+    <div class="ms-3 date" ng-controller="DateController as dateCtrl">
+      <span style="font-size: 12px; font-weight: 500;">Select Date</span>
+      <input type="date" id="date" name="input_date" [value]="date" (change)="dateChanged($event)"
+         placeholder="dd-MM-yyyy" min="15-12-2022" max="12-12-2030"/>
+    </div>
+    <fieldset class="radio-buttons" id="time">
+      <input id="daily" type="radio" [checked]="isDaily" value="daily" name="time">
+      <label class="pt-2 radio-input" for="daily">Daily</label>
+      <input id="weekly" type="radio" [checked]="!isDaily" value="weekly" name="time">
+      <label class="pt-2 radio-input" for="weekly">Weekly</label>
+    </fieldset>
+    <div class="publish-button text-end">
+      <button type=”button” class="btn btn-orange pb-button" (click)="createCSV()">Publish</button>
+      <div>
+        <span class="square p-1">Less</span>
+        <span class="square p-1">More</span>
+      </div>
+      <div class="text-secondary">
+        <span style="font-size: 12px;">Workforce Count- Request/Available</span>
+      </div>
     </div>
   </div>
+  <div class="reset-container">
+    <span class="reset-clickable" (click)="resetAll()">Reset All</span>
+  </div>
+  <div class="status-rows">
+    <div class="status-row-1">
+      <span class="left"></span>
+      <div class="selected-date">
+        {{getDateInSpecificFormat()}}
+      </div>
+    </div>
+    <div class="status-row-2">
+      <span class="shift left">Shifts</span>
+      <div class="selected-day">
+        {{getWeekDayWithName()}}
+      </div>
+    </div>
+    <div class="status-row-3">
+      <span class="left">Workforce Count</span>
+      <div class="request-over-available">
+        {{getRequestOverAvailable()}}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-2">
+      <ul *ngFor="let task of shifts; index as indexOfelement;" class="p-0 schedule-btns mt-3">
+        <div class="d-flex pt-3 pb-3">
+          <div class="bg-primary text-light ps-5 pe-5" [ngClass]="[indexOfelement > 1 && indexOfelement < 5 ? 'bg-danger' : '', indexOfelement > 4 ? 'bg-warning' : '']">
+            <span>{{hours[indexOfelement]}} <br>(8 hrs)</span>
+          </div>
+          <div class="border btn-sm btn-outline-primary pt-2 pb-2 ps-5 pe-5">
+            {{task.length}}/{{task.length}}
+          </div>
+        </div>
+      </ul>
+    </div>
+    <div cdkDropListGroup class="col-lg-10 border-start p-0">
+      <ul *ngFor="let task of shifts" class="p-0 border-bottom mt-3">
+        <div
+          cdkDropList
+          scrollX="true"
+          cdkDropListSortingDisabled
+          [cdkDropListData]="task"
+          (cdkDropListDropped)="drop($event)"
+          class="d-flex pt-4 pb-4 drop-list">
+          <ul *ngFor="let item of task" class="scroll-item d-flex p-0 " cdkDrag>
+            <li class="btn btn-sm btn-outline-warning m-1 text-dark d-flex">
+              {{item}}
 
-  <div class="example-container">
-    <h2>Done</h2>
-
-    <div
-      cdkDropList
-      [cdkDropListData]="done"
-      class="example-list"
-      (cdkDropListDropped)="drop($event)">
-      <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+              <div class="ms-4 drag-handle" cdkDragHandle>
+                <svg width="24px" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z"></path>
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                </svg>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </ul>
     </div>
   </div>
 </div>

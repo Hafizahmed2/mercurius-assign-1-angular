@@ -1,6 +1,7 @@
 .header {
-    background-color: antiquewhite;
-    height: 50px;
+    display: flex;
+    background-color: white;
+    height: 40px;
 }
 
 .post-header {
@@ -9,4 +10,26 @@
     line-height: 2;
     font-size: 22px;
     padding-left: 10px;
+}
+
+.nav-items {
+    white-space: nowrap;
+    background-color: rgba(236, 236, 236, 0.856);
+    height: 40px;
+    line-height: 2;
+}
+
+.schedule-type {
+    padding: 10px 10px 10px 10px;
+    display: inline;
+    list-style: none;
+}
+
+.schedule-type-heading {
+    text-decoration: none;
+    color: grey;
+}
+
+.active {
+    padding-bottom:  10px;
 }

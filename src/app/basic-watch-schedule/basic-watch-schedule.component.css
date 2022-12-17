@@ -1,3 +1,91 @@
+.input-row {
+  display: flex;
+}
+
+.select-area {
+  padding-right: 10%;
+}
+
+.select-area select {
+  padding-right: 50% !important;
+}
+
+.date input {
+  padding: 6px !important;
+  margin-left: 1%;
+}
+
+.select-area select, .date input {
+  border: 2px solid orange;
+  border-radius: 10px;
+  background-color: white;
+  color: gray;
+  padding: 8px;
+}
+
+.select-area select {
+  max-width: 650px;
+}
+
+.radio-buttons {
+  display: flex;
+  margin-left: 6%;
+}
+
+.radio-input {
+  line-height: 4.5;
+  padding: 0px 5px 0px 5px
+}
+
+.publish-button {
+  margin-left: 30%;
+}
+
+.pb-button {
+  border-radius: 20px;
+}
+
+.reset-clickable {
+  color: rgba(201, 116, 38, 0.856);
+  font-size: 14px;
+}
+
+.status-row-1, .status-row-2, .status-row-3 {
+  display: flex;
+}
+
+.status-row-1, .status-row-3 {
+  background-color: lightgray;
+}
+
+.status-row-2 {
+  background-color: grey;
+}
+
+.shift, .selected-day {
+  text-align: center;
+}
+
+.left {
+  width: 17%;
+}
+
+.selected-day, .selected-date, .request-over-available {
+  width: 83%;
+}
+
+.left, .selected-date, .request-over-available {
+  text-align: center;
+}
+
+.scroll-item {
+  list-style-type: none;
+}
+
+.schedule-btns {
+  height: 90px;
+}
+
 .example-container {
   width: 400px;
   max-width: 100%;
@@ -51,4 +139,14 @@
 
 .example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.drop-list {
+  min-height: 80px;
+  max-width: 80px;
+}
+
+.btn-orange{
+  color: white;
+  background-color: orangered;
 }

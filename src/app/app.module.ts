@@ -10,7 +10,7 @@ import { OptimizedScheduleComponent } from './optimized-schedule/optimized-sched
   declarations: [
     AppComponent,
     BasicWatchScheduleComponent,
-    OptimizedScheduleComponent
+    OptimizedScheduleComponent,
   ],
   imports: [
     BrowserModule,

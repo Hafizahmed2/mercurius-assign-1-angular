@@ -1,18 +1,19 @@
-<div class="header">
+<div class="m-2 header">
   <img src="assets/images/Mercurius_Inc_Logo.png" width="35px" alt="Mercurius Inc. Logo">
-  Mercurius Inc.
+  <p class="mt-2"> Mercurius Inc.</p>
+  <p style="padding-left: 89%;">Log Out</p>
 </div>
 <div class="post-header">
   StraightLines
 </div>
 
 <div class="schedule-types-navbar">
-  <ul class="nav-items"> 
-    <li (click)="onChangeTab('basic-watch-schedule')">
-      <a href="javascript:void(0)" [ngClass]="{'active': isActive('basic-watch-schedule')}">Basic Watch Schedule</a>
+  <ul class="nav-items">
+    <li class="schedule-type" (click)="onChangeTab('basic-watch-schedule')">
+      <a href="javascript:void(0)" class="schedule-type-heading" [ngStyle]="{'color': (isActive('basic-watch-schedule') ? 'orange' : 'grey'), 'border-bottom': (isActive('basic-watch-schedule') ? '2px solid orange' : '')}" [ngClass]="{'active': isActive('basic-watch-schedule')}">Basic Watch Schedule</a>
     </li>
-    <li (click)="onChangeTab('optimized-schedule')">
-      <a href="javascript:void(0)" [ngClass]="{'active': isActive('optimized-schedule')}">Optimized Schedule</a>
+    <li class="schedule-type" (click)="onChangeTab('optimized-schedule')">
+      <a href="javascript:void(0)" class="schedule-type-heading" [ngStyle]="{'color': (isActive('optimized-schedule') ? 'orange' : 'grey'), 'border-bottom': (isActive('optimized-schedule') ? '2px solid orange' : '')}" [ngClass]="{'active': isActive('optimized-schedule')}">Optimized Schedule</a>
     </li>
   </ul>
 </div>

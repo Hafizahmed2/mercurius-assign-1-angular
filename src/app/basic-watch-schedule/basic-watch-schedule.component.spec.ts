@@ -1,5 +1,5 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { BasicWatchScheduleComponent } from './basic-watch-schedule.component';
 
 describe('BasicWatchScheduleComponent', () => {
@@ -8,7 +8,8 @@ describe('BasicWatchScheduleComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BasicWatchScheduleComponent ]
+      declarations: [ BasicWatchScheduleComponent ],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
 
@@ -19,5 +20,11 @@ describe('BasicWatchScheduleComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should be an array', () => {
+    const fixture = TestBed.createComponent(BasicWatchScheduleComponent);
+    const app = fixture.componentInstance;
+    expect(Array.isArray(app.shifts)).toBeTrue();
   });
 });
