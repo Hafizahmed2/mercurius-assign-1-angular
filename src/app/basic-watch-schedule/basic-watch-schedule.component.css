@@ -1,11 +1,3 @@
-.input-row {
-  display: flex;
-}
-
-.select-area {
-  padding-right: 10%;
-}
-
 .select-area select {
   padding-right: 50% !important;
 }
@@ -21,24 +13,6 @@
   background-color: white;
   color: gray;
   padding: 8px;
-}
-
-.select-area select {
-  max-width: 650px;
-}
-
-.radio-buttons {
-  display: flex;
-  margin-left: 6%;
-}
-
-.radio-input {
-  line-height: 4.5;
-  padding: 0px 5px 0px 5px
-}
-
-.publish-button {
-  margin-left: 30%;
 }
 
 .pb-button {
@@ -143,7 +117,6 @@
 
 .drop-list {
   min-height: 80px;
-  max-width: 80px;
 }
 
 .btn-orange{
